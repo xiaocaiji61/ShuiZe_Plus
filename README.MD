@@ -1,3 +1,5 @@
+本项目为二开，原作者：https://github.com/0x727/ShuiZe_0x727
+
 更新记录
 
 1.爆破子域名从ksubdomain改为Subfinder
