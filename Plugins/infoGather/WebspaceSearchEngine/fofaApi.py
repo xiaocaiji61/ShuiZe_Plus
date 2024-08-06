@@ -63,7 +63,8 @@ def query(query_str):
         fofa_Results = ret['results']
         for result in fofa_Results:
             isWeb, host_port = filter_web(result)
-            if isWeb:
+            # 过滤fofa的假结果
+            if isWeb and 'autodiscover' not in host_port:
                 fofa_web_host_port.append(host_port)
             else:
                 fofa_service_host_port.append(host_port)
