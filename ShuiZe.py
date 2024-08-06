@@ -1093,6 +1093,11 @@ def run_cSubnet(CIP_List, Subdomains_ips, notCDNSubdomains, param_Links):
     # # 不仅仅只信息收集-即跑漏洞
     if justInfoGather == 0:
         # print(alive_Web)
+        #避免任务过多，nuclei 卡死
+        if len(alive_Web)>100 :
+            print("存活web过多，自行nuclei漏扫")
+            alive_Web = []
+
         webVul_list = detect_webVul(alive_Web)  # 获取C段资产
         #
         # if domain:
